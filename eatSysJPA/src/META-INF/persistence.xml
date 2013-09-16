@@ -18,11 +18,11 @@
     <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.AreaConhecimento_CnpqSubAreas</class>
     <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Aluno</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/JPAeatSys"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/JpaEatsys"/>
       <property name="javax.persistence.jdbc.password" value="123456"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
     </properties>
   </persistence-unit>
 </persistence>

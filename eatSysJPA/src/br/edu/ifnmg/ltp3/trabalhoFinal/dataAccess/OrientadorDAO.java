@@ -45,14 +45,14 @@ public class OrientadorDAO extends DAOGenerico<Orientador> {
         
         
 
-        if (obj.getNome() != null) {
+        if (obj.getCpf() != 0) {
             if (filtro.length() > 0) {
                 filtro = filtro + " and ";
             }
-            filtro = " c.nome =: nome";
+            filtro = " o.cpf =: cpf";
             parametros.put("nome", obj.getNome());
         }
-        if (obj.getSenha() != null) {
+        /*if (obj.get != null) {
             if (filtro.length() > 0) {
                 filtro = filtro + " and ";
             }
@@ -71,6 +71,8 @@ public class OrientadorDAO extends DAOGenerico<Orientador> {
         if (filtro.length() > 0) {
             consulta = consulta + " where " + filtro;
         }
+        * 
+        * */
 
         // Cria a consulta no JPA
         Query query = manager.createQuery(consulta);

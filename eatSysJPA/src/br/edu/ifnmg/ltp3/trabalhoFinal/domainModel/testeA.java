@@ -162,29 +162,30 @@ public class testeA {
        
        
        
+       for(int i=0 ; i<10;i++){
        
-       
-       //Persiste o orientador
-        transacao = manager.getTransaction();
-        
-        try{
-            //iniciar a trnsacao
-            transacao.begin();
-            
-            //Persiste o objeto
-            manager.persist(obj);
-            
-            //se tudo ocorrer bem confirma a transacao
-            transacao.commit();
-            
-            
-        }catch(Exception e){
-            e.printStackTrace();
-            transacao.rollback();
-           
-        }
-    
-    
-    
-    }    
+        //Persiste o orientador
+         transacao = manager.getTransaction();
+
+         try{
+             //iniciar a trnsacao
+             transacao.begin();
+
+             //Persiste o objeto
+             manager.persist(obj);
+
+             //se tudo ocorrer bem confirma a transacao
+             transacao.commit();
+
+
+         }catch(Exception e){
+             e.printStackTrace();
+             transacao.rollback();
+
+         }
+
+
+
+     }
+    }
 }
