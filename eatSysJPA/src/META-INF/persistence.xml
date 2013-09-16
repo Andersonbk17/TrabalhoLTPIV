@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="eatSysPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Campus</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Usuario</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.ProjetoPesquisa</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.PlanoDeTrabalho</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Pessoa</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.ParticipanteProjeto</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Orientador</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Nacionalidade</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Estado</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.CursoArea</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.CronogramaDeAtividade</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Cidade</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.AreaConhecimento_Cnpq</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.AreaConhecimento_CnpqSubAreas</class>
+    <class>br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Aluno</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/JPAeatSys"/>
+      <property name="javax.persistence.jdbc.password" value="123456"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+    </properties>
+  </persistence-unit>
+</persistence>
