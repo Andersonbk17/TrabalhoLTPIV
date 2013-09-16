@@ -6,7 +6,6 @@ package br.edu.ifnmg.ltp3.trabalhoFinal.domainModel;
 
 import java.io.Serializable;
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
