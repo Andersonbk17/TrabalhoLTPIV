@@ -21,7 +21,7 @@ public abstract class DAOGenerico<T> {
     private Class tipo;
     
     public DAOGenerico(Class t){
-        factory = Persistence.createEntityManagerFactory("eatSys");
+factory = Persistence.createEntityManagerFactory("eatSysPU");
         manager = factory.createEntityManager();
         tipo = t;
     }
@@ -95,9 +95,6 @@ public abstract class DAOGenerico<T> {
            return false;
        }
     }    
-    
-    
-    
     
     
 }

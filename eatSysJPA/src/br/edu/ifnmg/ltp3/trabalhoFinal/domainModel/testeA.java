@@ -4,18 +4,23 @@
  */
 package br.edu.ifnmg.ltp3.trabalhoFinal.domainModel;
 
+import br.edu.ifnmg.ltp3.trabalhoFinal.dataAccess.OrientadorDAO;
 import java.sql.SQLException;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.swing.JOptionPane;
 
 
 public class testeA {
     public static void main(String args[]) throws SQLException{
-       Orientador o = new Orientador();
+      
+        Orientador obj = new Orientador();
        
-       EntityManager manager;
+      /*
+        EntityManager manager;
        
        EntityManagerFactory factory;
        
@@ -170,6 +175,8 @@ public class testeA {
          try{
              //iniciar a trnsacao
              transacao.begin();
+             obj.setNome("Pessoa "+i);
+             //JOptionPane.showMessageDialog(null, obj.getNome());
 
              //Persiste o objeto
              manager.persist(obj);
@@ -187,5 +194,12 @@ public class testeA {
 
 
      }
+    */
+        obj.setNome("Anderson");
+    OrientadorDAO  dao = new OrientadorDAO();
+        List<Orientador> Buscar = dao.Buscar(obj);
+        
+        JOptionPane.showMessageDialog(null, Buscar);
+    
     }
 }
