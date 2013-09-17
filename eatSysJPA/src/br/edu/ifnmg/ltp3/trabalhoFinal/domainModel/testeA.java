@@ -194,12 +194,16 @@ public class testeA {
 
 
      }
-    */
-        obj.setNome("Anderson");
+    /* */
+        obj.setNome("Pessoa 9");
     OrientadorDAO  dao = new OrientadorDAO();
         List<Orientador> Buscar = dao.Buscar(obj);
         
+        
         JOptionPane.showMessageDialog(null, Buscar);
     
+        
+
     }
+    
 }

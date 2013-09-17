@@ -21,7 +21,7 @@ public class OrientadorDAO extends DAOGenerico<Orientador> {
     
     public List<Orientador> Buscar(Orientador obj) {
         // Corpo da consulta
-        String consulta = "select o from Orientador o";
+        String consulta = "Select o from Orientador o";
 
         // A parte where da consulta
         String filtro = "";
@@ -31,7 +31,7 @@ public class OrientadorDAO extends DAOGenerico<Orientador> {
 
         // Verifica campo por campo os valores que serão filtrados
         if (obj.getId() != null) {
-            filtro = " o.id =: id";
+            filtro = " o.id =:id";
             parametros.put("id", obj.getId());
         }
 
@@ -39,7 +39,7 @@ public class OrientadorDAO extends DAOGenerico<Orientador> {
             if (filtro.length() > 0) {
                 filtro = filtro + " and ";
             }
-            filtro = " o.nome =: nome";
+            filtro = " o.nome =:nome";
             parametros.put("nome", obj.getNome());
         }
         
@@ -50,7 +50,7 @@ public class OrientadorDAO extends DAOGenerico<Orientador> {
                 filtro = filtro + " and ";
             }
             filtro = " o.cpf =: cpf";
-            parametros.put("nome", obj.getNome());
+            parametros.put("cpf", obj.getNome());
         }
         /*if (obj.get != null) {
             if (filtro.length() > 0) {
@@ -67,12 +67,12 @@ public class OrientadorDAO extends DAOGenerico<Orientador> {
             filtro = " c.tipo =: tipo";
             parametros.put("tipo", obj.getTipo());
         }
+        */ 
         // Se houver filtros, coloca o "where" na consulta
         if (filtro.length() > 0) {
             consulta = consulta + " where " + filtro;
         }
-        * 
-        * */
+                
 
         // Cria a consulta no JPA
         Query query = manager.createQuery(consulta);
