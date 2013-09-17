@@ -200,7 +200,7 @@ public class testeA {
         List<Orientador> Buscar = dao.Buscar(obj);
         
         
-        JOptionPane.showMessageDialog(null, Buscar);
+        JOptionPane.showMessageDialog(null, Buscar.get(0));
     
         
 

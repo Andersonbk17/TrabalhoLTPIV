@@ -45,13 +45,24 @@ public class OrientadorDAO extends DAOGenerico<Orientador> {
         
         
 
-        if (obj.getCpf() != 0) {
+        if (obj.getMatriculaSiape() != 0) {
             if (filtro.length() > 0) {
                 filtro = filtro + " and ";
             }
-            filtro = " o.cpf =: cpf";
+            filtro = " o.matriculaSiape =:matriculaSiape";
+            parametros.put("matriculaSiape", obj.getNome());
+        }
+        
+        
+        if (obj.getMatriculaSiape() != 0) {
+            if (filtro.length() > 0) {
+                filtro = filtro + " and ";
+            }
+            filtro = " o.cpf =:cpf";
             parametros.put("cpf", obj.getNome());
         }
+        
+        
         /*if (obj.get != null) {
             if (filtro.length() > 0) {
                 filtro = filtro + " and ";
