@@ -5,6 +5,7 @@
 package br.edu.ifnmg.ltp3.trabalhoFinal.dataAccess;
 
 import br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.Aluno;
+import br.edu.ifnmg.ltp3.trabalhoFinal.domainModel.ProjetoPesquisa;
 import java.util.HashMap;
 import java.util.List;
 import javax.persistence.Query;
@@ -13,15 +14,15 @@ import javax.persistence.Query;
  *
  * @author aluno
  */
-public class AlunoDAO extends DAOGenerico<Aluno> {
-    public AlunoDAO(){
-        super(OrientadorDAO.class);
+public class ProjetoPesquisaDAO extends DAOGenerico<ProjetoPesquisa> {
+    
+    public ProjetoPesquisaDAO(){
+        super(ProjetoPesquisa.class);
     }
     
-    
-    public List<Aluno> Buscar(Aluno obj){
+    public List<Aluno> Buscar(ProjetoPesquisa obj){
         
-        String consulta = "SELECT o FROM Aluno o";
+        String consulta = "SELECT o FROM ProjetoPesquisa o";
         
         // A parte where da consulta
         String filtro = "";
@@ -35,22 +36,22 @@ public class AlunoDAO extends DAOGenerico<Aluno> {
             parametros.put("id", obj.getId());
         }
 
-        if (obj.getNome()!= null) {
+        if (obj.getTitulo() != null) {
             if (filtro.length() > 0) {
                 filtro = filtro + " and ";
             }
-            filtro = " o.nome =:nome";
-            parametros.put("nome", obj.getNome());
+            filtro = " o.titulo =:titulo";
+            parametros.put("titulo", obj.getTitulo());
         }
         
         
 
-        if (obj.getCpf() != 0) {
+        if (obj.getOrientador().getNome() != "") {
             if (filtro.length() > 0) {
                 filtro = filtro + " and ";
             }
-            filtro = " o.cpf =:cpf";
-            parametros.put("cpf", obj.getNome());
+            filtro = " o.orientador =:orientador";
+            parametros.put("corientador", obj.getOrientador().getNome());
         }
               
  
@@ -74,4 +75,5 @@ public class AlunoDAO extends DAOGenerico<Aluno> {
  
     
     }
+    
 }
